@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Eye, EyeOff, LockKeyhole, Mail, ShieldCheck, Sparkles } from "lucide-react";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase, isSupabaseConfigured } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
 
 export default function Auth() {
@@ -19,6 +19,7 @@ export default function Auth() {
 
   async function handleLogin(event:React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!isSupabaseConfigured) { toast.error('O acesso aos membros ainda não foi configurado neste ambiente.'); return; }
     setSubmitting(true);
     try {
       const {error}=await supabase.auth.signInWithPassword({email:email.trim(),password});
@@ -64,6 +65,7 @@ export default function Auth() {
           <h2 className="text-[38px] font-extrabold tracking-[-.07em] text-[#26372c] sm:text-[44px]">{mode==="login"?"Entre na sua jornada.":"Esqueceu sua senha?"}</h2>
           <p className="mt-3 text-[14px] leading-[1.8] text-[#6f7a6e]">{mode==="login"?"Suas próximas conquistas estão logo adiante.":"Informe seu e-mail para receber as instruções de recuperação."}</p>
         </div>
+        {!isSupabaseConfigured && <div role="status" className="mb-6 rounded-lg border border-[#d5b28d] bg-[#f5ead9] px-4 py-3 text-[12px] leading-[1.7] text-[#825a3a]">Prévia de design: a área de membros estará disponível depois que um Supabase de desenvolvimento for conectado.</div>}
         <form onSubmit={mode==="login"?handleLogin:handleRecovery} className="space-y-5">
           <div>
             <label htmlFor="oc-email" className="mb-2 block text-[12px] font-bold text-[#3d5142]">E-mail</label>
@@ -79,7 +81,7 @@ export default function Auth() {
               <button type="button" onClick={()=>setVisible(!visible)} aria-label={visible?"Ocultar senha":"Mostrar senha"} className="absolute right-4 top-1/2 -translate-y-1/2 text-[#7d887b] hover:text-[#314835]">{visible?<EyeOff size={18}/>:<Eye size={18}/>}</button>
             </div>
           </div>}
-          <button type="submit" disabled={submitting} className="flex h-[54px] w-full items-center justify-center gap-3 rounded-lg bg-[#263b2f] text-[13px] font-extrabold text-[#f8f2e7] transition-colors hover:bg-[#3a5541] disabled:cursor-not-allowed disabled:opacity-60">
+          <button type="submit" disabled={submitting || !isSupabaseConfigured} className="flex h-[54px] w-full items-center justify-center gap-3 rounded-lg bg-[#263b2f] text-[13px] font-extrabold text-[#f8f2e7] transition-colors hover:bg-[#3a5541] disabled:cursor-not-allowed disabled:opacity-60">
             {submitting?"Aguarde...":mode==="login"?"Entrar na minha conta":"Enviar link de recuperação"} <ArrowRight size={17}/>
           </button>
           {mode==="forgot"&&<button type="button" onClick={()=>setMode("login")} className="mt-3 w-full text-center text-[12px] font-bold text-[#936b4d] hover:underline">Voltar ao login</button>}
