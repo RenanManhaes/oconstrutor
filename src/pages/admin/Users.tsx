@@ -196,10 +196,11 @@ const AdminUsers = () => {
   };
 
   return (
-    <div className="max-w-5xl space-y-6">
+    <div className="max-w-6xl space-y-8">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="font-heading font-bold text-2xl text-foreground">Usuários</h1>
+          <p className="studio-eyebrow mb-3">Gestão de pessoas</p>
+          <h1 className="studio-title text-[30px] leading-tight sm:text-[38px]">Mentorados<span className="text-[#d6aa86]">.</span></h1>
           <p className="text-muted-foreground text-sm mt-1">
             Gerencie os clientes da mentoria. <span className="text-accent">{users.length}</span> cadastrados.
           </p>
@@ -266,7 +267,7 @@ const AdminUsers = () => {
           placeholder="Buscar por nome ou email..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="pl-10 bg-card/50 border-accent/10 text-foreground placeholder:text-muted-foreground/50"
+          className="pl-10 bg-[#1e2a25] border-[#36473d] text-foreground placeholder:text-muted-foreground/50"
         />
       </div>
 
@@ -291,7 +292,7 @@ const AdminUsers = () => {
               .toUpperCase();
 
             return (
-              <Card key={user.id} className="bg-card/30 border-accent/5 hover:border-accent/15 transition-colors">
+              <Card key={user.id} className="bg-[#1e2a25] border-[#36473d] hover:border-accent/15 transition-colors">
                 <CardContent className="p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                   <div className="h-10 w-10 rounded-full bg-accent/20 flex items-center justify-center text-accent text-sm font-bold shrink-0">
                     {initials}
