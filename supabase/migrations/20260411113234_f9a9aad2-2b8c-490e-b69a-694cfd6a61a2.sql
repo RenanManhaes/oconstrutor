@@ -1,0 +1,2 @@
+DROP POLICY "Service can insert notifications" ON public.notifications;
+CREATE POLICY "Admins can insert notifications" ON public.notifications FOR INSERT WITH CHECK (public.has_role(auth.uid(), 'admin'));

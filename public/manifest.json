@@ -1,0 +1,21 @@
+{
+  "name": "O Construtor — Mentoria Masculina",
+  "short_name": "O Construtor",
+  "description": "Mentoria masculina de transformação com Vagner Vieira.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A1628",
+  "theme_color": "#C4942A",
+  "icons": [
+    {
+      "src": "/logo-badge.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/logo-badge.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
