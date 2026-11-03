@@ -190,14 +190,15 @@ const AdminSettings = () => {
   const initials = (fullName || user?.email || "A").split(" ").map(n => n[0]).join("").slice(0, 2).toUpperCase();
 
   return (
-    <div className="max-w-4xl space-y-6">
+    <div className="max-w-6xl space-y-8">
       <div>
-        <h1 className="font-heading font-bold text-2xl text-foreground">Configurações</h1>
+        <p className="studio-eyebrow mb-3">Preferências da plataforma</p>
+          <h1 className="studio-title text-[30px] leading-tight sm:text-[38px]">Configurações<span className="text-[#d6aa86]">.</span></h1>
         <p className="text-muted-foreground text-sm mt-1">Perfil, plataforma e arquivos.</p>
       </div>
 
       {/* Profile */}
-      <Card className="bg-card/50 border-accent/10">
+      <Card className="bg-[#1e2a25] border-[#36473d]">
         <CardHeader>
           <CardTitle className="text-sm font-heading text-muted-foreground uppercase tracking-wider">Meu Perfil</CardTitle>
         </CardHeader>
@@ -236,7 +237,7 @@ const AdminSettings = () => {
       </Card>
 
       {/* Platform Settings */}
-      <Card className="bg-card/50 border-accent/10">
+      <Card className="bg-[#1e2a25] border-[#36473d]">
         <CardHeader>
           <CardTitle className="text-sm font-heading text-muted-foreground uppercase tracking-wider">Plataforma</CardTitle>
         </CardHeader>
@@ -272,7 +273,7 @@ const AdminSettings = () => {
       </Card>
 
       {/* File Manager */}
-      <Card className="bg-card/50 border-accent/10">
+      <Card className="bg-[#1e2a25] border-[#36473d]">
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="text-sm font-heading text-muted-foreground uppercase tracking-wider">Arquivos da Plataforma</CardTitle>
           <label>
