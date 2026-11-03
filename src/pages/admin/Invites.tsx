@@ -217,7 +217,8 @@ const AdminInvites = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between flex-wrap gap-3">
         <div>
-          <h1 className="font-heading text-2xl text-white">Convites públicos</h1>
+          <p className="studio-eyebrow mb-3">Aquisição e participação</p>
+          <h1 className="studio-title text-[30px] leading-tight sm:text-[38px]">Convites públicos<span className="text-[#d6aa86]">.</span></h1>
           <p className="text-sm text-gray-400 font-body">Gere links para divulgar nas redes sociais e capturar leads</p>
         </div>
         <Dialog open={showNew} onOpenChange={(o) => { setShowNew(o); if (!o) resetForm(); }}>
