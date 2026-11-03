@@ -118,13 +118,14 @@ const ClientProfile = () => {
   const totalPending = payments.filter(p => p.status !== "paid").reduce((s, p) => s + Number(p.amount), 0);
 
   return (
-    <div className="max-w-2xl space-y-6">
+    <div className="max-w-5xl space-y-8">
       <div>
-        <h1 className="font-heading font-bold text-2xl text-foreground">Meu Perfil</h1>
+        <p className="studio-eyebrow mb-3">Sua conta</p>
+          <h1 className="studio-title text-[30px] leading-tight sm:text-[38px]">Meu perfil<span className="text-[#d6aa86]">.</span></h1>
         <p className="text-muted-foreground text-sm mt-1">Gerencie suas informações pessoais.</p>
       </div>
 
-      <Card className="bg-card/50 border-accent/10">
+      <Card className="bg-[#1e2a25] border-[#36473d]">
         <CardContent className="p-6">
           <div className="flex items-center gap-4 mb-6">
             <div className="relative group">
