@@ -3,7 +3,7 @@ import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import {
   LayoutDashboard, Map, CalendarDays, Library, BookOpen, Bell, UserRound,
   UsersRound, ChartNoAxesCombined, CreditCard, Link2, Settings2,
-  Search, PanelLeft, LogOut, ArrowUpRight, ChevronRight, Sparkles, CircleHelp,
+  Search, LogOut, ArrowUpRight, ChevronRight, Sparkles, CircleHelp,
 } from "lucide-react";
 import { SidebarProvider, Sidebar, SidebarContent, SidebarFooter, SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -153,7 +153,7 @@ function WorkspaceBody({ role }: { role: Role }) {
             <button type="button" className="studio-search" onClick={() => setSearchOpen(true)} aria-label="Buscar páginas e comandos">
               <Search size={15} strokeWidth={1.9}/>
               <span className="hidden sm:block">Buscar página...</span>
-              <kbd className="studio-key hidden sm:block">⌘ K</kbd>
+              <kbd className="studio-key hidden sm:block">Ctrl K</kbd>
             </button>
             <NavLink to={announcementPath} className="studio-icon-button relative" aria-label="Ver comunicados" title="Comunicados"><Bell size={18}/></NavLink>
             <DropdownMenu>
