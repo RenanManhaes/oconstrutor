@@ -143,15 +143,16 @@ const AdminProgress = () => {
   if (loading) return <div className="text-gray-400 p-8">Carregando...</div>;
 
   return (
-    <div className="max-w-5xl space-y-6">
+    <div className="max-w-6xl space-y-8">
       <div>
-        <h1 className="font-heading font-bold text-2xl text-white">Progresso dos Alunos</h1>
+        <p className="studio-eyebrow mb-3">Acompanhamento</p>
+          <h1 className="studio-title text-[30px] leading-tight sm:text-[38px]">Evolução dos mentorados<span className="text-[#d6aa86]">.</span></h1>
         <p className="text-gray-400 text-sm mt-1">Acompanhe o progresso, presença e ações de cada cliente.</p>
       </div>
 
       <div className="relative">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
-        <Input placeholder="Buscar usuário..." value={search} onChange={e => setSearch(e.target.value)} className="pl-10 bg-navy-light/50 border-gold/10 text-white placeholder:text-gray-600" />
+        <Input placeholder="Buscar usuário..." value={search} onChange={e => setSearch(e.target.value)} className="pl-10 bg-[#1e2a25] border-[#36473d] text-white placeholder:text-gray-600" />
       </div>
 
       {filtered.length === 0 && <p className="text-gray-500 text-sm">Nenhum usuário encontrado.</p>}
@@ -161,7 +162,7 @@ const AdminProgress = () => {
           const isExpanded = expandedUser === u.userId;
           const detail = userDetails[u.userId];
           return (
-            <Card key={u.userId} className="bg-navy-light/30 border-gold/5">
+            <Card key={u.userId} className="bg-[#1e2a25] border-[#36473d]">
               <CardContent className="p-5">
                 <button className="w-full text-left" onClick={() => toggleExpand(u.userId)}>
                   <div className="flex items-center justify-between mb-3">
