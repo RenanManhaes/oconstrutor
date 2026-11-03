@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Montserrat", "sans-serif"],
+        heading: ["Manrope", "sans-serif"],
         body: ["DM Sans", "sans-serif"],
       },
       colors: {

@@ -193,10 +193,11 @@ const AdminEncontros = () => {
   if (loading) return <div className="text-gray-400 p-8">Carregando...</div>;
 
   return (
-    <div className="max-w-5xl space-y-6">
+    <div className="max-w-6xl space-y-8">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="font-heading font-bold text-2xl text-white">Encontros</h1>
+          <p className="studio-eyebrow mb-3">Agenda e sessões</p>
+          <h1 className="studio-title text-[30px] leading-tight sm:text-[38px]">Encontros<span className="text-[#d6aa86]">.</span></h1>
           <p className="text-gray-400 text-sm mt-1">Gerencie os encontros e associe materiais a cada sessão.</p>
         </div>
         <Button size="sm" className="bg-gradient-gold text-navy-dark font-heading font-semibold" onClick={openNew}>
@@ -206,7 +207,7 @@ const AdminEncontros = () => {
 
       <div className="relative">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
-        <Input placeholder="Buscar encontro..." value={search} onChange={e => setSearch(e.target.value)} className="pl-10 bg-navy-light/50 border-gold/10 text-white placeholder:text-gray-600" />
+        <Input placeholder="Buscar encontro..." value={search} onChange={e => setSearch(e.target.value)} className="pl-10 bg-[#1e2a25] border-[#36473d] text-white placeholder:text-gray-600" />
       </div>
 
       {filtered.length === 0 && <p className="text-gray-500 text-sm">Nenhum encontro encontrado.</p>}
@@ -215,7 +216,7 @@ const AdminEncontros = () => {
         {filtered.map((enc) => {
           const matCount = encontroMaterialsMap[enc.id]?.length || 0;
           return (
-            <Card key={enc.id} className="bg-navy-light/30 border-gold/5">
+            <Card key={enc.id} className="bg-[#1e2a25] border-[#36473d]">
               <CardContent className="p-4 flex items-center gap-4">
                 {enc.thumbnail_url ? (
                   <img src={enc.thumbnail_url} alt="" loading="lazy" decoding="async" className="h-10 w-10 rounded-lg object-cover shrink-0" />

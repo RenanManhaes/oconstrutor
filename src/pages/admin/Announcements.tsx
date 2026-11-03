@@ -76,10 +76,11 @@ const AdminAnnouncements = () => {
   if (loading) return <div className="text-gray-400 p-8">Carregando...</div>;
 
   return (
-    <div className="max-w-4xl space-y-6">
+    <div className="max-w-6xl space-y-8">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="font-heading font-bold text-2xl text-white">Avisos</h1>
+          <p className="studio-eyebrow mb-3">Comunicação</p>
+          <h1 className="studio-title text-[30px] leading-tight sm:text-[38px]">Comunicados<span className="text-[#d6aa86]">.</span></h1>
           <p className="text-gray-400 text-sm mt-1">Gerencie os avisos para os clientes.</p>
         </div>
         <Button size="sm" className="bg-gradient-gold text-navy-dark font-heading font-semibold" onClick={openNew}>
@@ -91,7 +92,7 @@ const AdminAnnouncements = () => {
 
       <div className="space-y-2">
         {announcements.map((a) => (
-          <Card key={a.id} className="bg-navy-light/30 border-gold/5">
+          <Card key={a.id} className="bg-[#1e2a25] border-[#36473d]">
             <CardContent className="p-4 flex items-center gap-4">
               <Bell className={`h-4 w-4 ${a.active ? "text-gold" : "text-gray-600"} shrink-0`} />
               <div className="flex-1 min-w-0">

@@ -45,11 +45,10 @@ const AdminInvites = lazy(() => import("./pages/admin/Invites"));
 const queryClient = new QueryClient();
 
 const PageLoader = () => (
-  <div className="min-h-screen bg-navy-dark flex items-center justify-center">
-    <div className="flex flex-col items-center gap-3">
-      <div className="h-8 w-8 border-2 border-gold/30 border-t-gold rounded-full animate-spin" />
-      <span className="text-sm text-gray-500 font-body">Carregando...</span>
-    </div>
+  <div className="flex min-h-screen flex-col items-center justify-center gap-5 bg-[#141c1b]" role="status" aria-live="polite">
+    <div className="grid h-14 w-14 place-items-center rounded-xl border border-[#8f755d] bg-[#25332d] text-[33px] text-[#e2b78e]" style={{fontFamily:"Instrument Serif,Georgia,serif"}} aria-hidden="true">C</div>
+    <div className="h-[2px] w-20 overflow-hidden bg-[#34433a]" aria-hidden="true"><div className="h-full w-full origin-left animate-pulse bg-[#d8aa85] motion-reduce:animate-none"/></div>
+    <p className="text-[12px] font-semibold tracking-wide text-[#a5b3a6]">Preparando sua experiência...</p>
   </div>
 );
 

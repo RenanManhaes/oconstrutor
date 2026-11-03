@@ -4,8 +4,8 @@
   "description": "Mentoria masculina de transformação com Vagner Vieira.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0A1628",
-  "theme_color": "#C4942A",
+  "background_color": "#20302a",
+  "theme_color": "#d2ac88",
   "icons": [
     {
       "src": "/logo-badge.svg",

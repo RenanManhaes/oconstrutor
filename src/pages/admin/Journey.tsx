@@ -143,10 +143,11 @@ const AdminJourney = () => {
   if (loading) return <div className="text-gray-400 p-8">Carregando...</div>;
 
   return (
-    <div className="max-w-4xl space-y-6">
+    <div className="max-w-6xl space-y-8">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="font-heading font-bold text-2xl text-white">Jornada</h1>
+          <p className="studio-eyebrow mb-3">Estrutura da mentoria</p>
+          <h1 className="studio-title text-[30px] leading-tight sm:text-[38px]">Jornadas e pilares<span className="text-[#d6aa86]">.</span></h1>
           <p className="text-gray-400 text-sm mt-1">Gerencie as jornadas e suas etapas.</p>
         </div>
         <Button size="sm" className="bg-gradient-gold text-navy-dark font-heading font-semibold" onClick={openNewJourney}>
@@ -159,7 +160,7 @@ const AdminJourney = () => {
       <div className="space-y-3">
         {journeys.map((journey) => (
           <div key={journey.id}>
-            <Card className="bg-navy-light/30 border-gold/5">
+            <Card className="bg-[#1e2a25] border-[#36473d]">
               <CardContent className="p-4 flex items-center gap-4">
                 <GripVertical className="h-5 w-5 text-gray-600 shrink-0" />
                 <div className="h-8 w-8 rounded-full bg-gold/10 flex items-center justify-center text-gold text-sm font-heading font-bold shrink-0">

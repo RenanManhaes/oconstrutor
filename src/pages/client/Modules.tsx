@@ -141,9 +141,10 @@ const ClientModules = () => {
   if (loading) return <div className="text-gray-400 p-8">Carregando...</div>;
 
   return (
-    <div className="max-w-5xl space-y-6">
+    <div className="max-w-6xl space-y-8">
       <div>
-        <h1 className="font-heading font-bold text-2xl text-white">Pilares & Módulos</h1>
+        <p className="studio-eyebrow mb-3">Seu conteúdo de desenvolvimento</p>
+          <h1 className="studio-title text-[30px] leading-tight sm:text-[38px]">Pilares e módulos<span className="text-[#d6aa86]">.</span></h1>
         <p className="text-gray-400 text-sm mt-1">Explore os 6 pilares e seus módulos de transformação.</p>
       </div>
 
