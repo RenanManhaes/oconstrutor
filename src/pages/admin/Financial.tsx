@@ -208,7 +208,8 @@ const AdminFinancial = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="font-heading font-bold text-2xl text-white">Financeiro</h1>
+          <p className="studio-eyebrow mb-3">Pagamentos e parcelas</p>
+          <h1 className="studio-title text-[30px] leading-tight sm:text-[38px]">Financeiro<span className="text-[#d6aa86]">.</span></h1>
           <p className="text-gray-400 text-sm mt-1">Gerencie pagamentos e parcelas dos mentorados.</p>
         </div>
         <Button className="bg-gradient-gold text-navy-dark font-heading font-semibold" onClick={() => setGenOpen(true)}>
@@ -223,7 +224,7 @@ const AdminFinancial = () => {
           { label: "Pendente", value: totalPending, color: "text-yellow-400", icon: CalendarDays },
           { label: "Vencido", value: totalOverdue, color: "text-red-400", icon: AlertTriangle },
         ].map((s, i) => (
-          <Card key={i} className="bg-navy-light/30 border-gold/5">
+          <Card key={i} className="bg-[#1e2a25] border-[#36473d]">
             <CardContent className="p-4 flex items-center gap-3">
               <s.icon className={`h-5 w-5 ${s.color}`} />
               <div>
@@ -242,10 +243,10 @@ const AdminFinancial = () => {
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
           <Input placeholder="Buscar por nome..." value={search} onChange={e => setSearch(e.target.value)}
-            className="pl-10 bg-navy-light/50 border-gold/10 text-white placeholder:text-gray-600" />
+            className="pl-10 bg-[#1e2a25] border-[#36473d] text-white placeholder:text-gray-600" />
         </div>
         <Select value={selectedUser} onValueChange={setSelectedUser}>
-          <SelectTrigger className="w-56 bg-navy-light/50 border-gold/10 text-white">
+          <SelectTrigger className="w-56 bg-[#1e2a25] border-[#36473d] text-white">
             <SelectValue placeholder="Todos os usuários" />
           </SelectTrigger>
           <SelectContent className="bg-navy-dark border-gold/10">
@@ -261,7 +262,7 @@ const AdminFinancial = () => {
       <div className="space-y-2">
         {filtered.length === 0 && <p className="text-gray-500 text-sm">Nenhum pagamento encontrado.</p>}
         {filtered.map(p => (
-          <Card key={p.id} className="bg-navy-light/30 border-gold/5">
+          <Card key={p.id} className="bg-[#1e2a25] border-[#36473d]">
             <CardContent className="p-4 flex items-center gap-4">
               <div className="h-10 w-10 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
                 <DollarSign className="h-4 w-4 text-gold" />
@@ -302,7 +303,7 @@ const AdminFinancial = () => {
             <div className="space-y-2">
               <Label className="text-gray-400 text-sm">Usuário</Label>
               <Select value={genUserId} onValueChange={setGenUserId}>
-                <SelectTrigger className="bg-navy-light/50 border-gold/10 text-white">
+                <SelectTrigger className="bg-[#1e2a25] border-[#36473d] text-white">
                   <SelectValue placeholder="Selecione o mentorado" />
                 </SelectTrigger>
                 <SelectContent className="bg-navy-dark border-gold/10">
@@ -315,18 +316,18 @@ const AdminFinancial = () => {
             <div className="space-y-2">
               <Label className="text-gray-400 text-sm">Valor mensal (R$)</Label>
               <Input type="number" step="0.01" value={genAmount} onChange={e => setGenAmount(e.target.value)}
-                className="bg-navy-light/50 border-gold/10 text-white" placeholder="500.00" />
+                className="bg-[#1e2a25] border-[#36473d] text-white" placeholder="500.00" />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-2">
                 <Label className="text-gray-400 text-sm">Nº de parcelas</Label>
                 <Input type="number" value={genMonths} onChange={e => setGenMonths(e.target.value)}
-                  className="bg-navy-light/50 border-gold/10 text-white" />
+                  className="bg-[#1e2a25] border-[#36473d] text-white" />
               </div>
               <div className="space-y-2">
                 <Label className="text-gray-400 text-sm">Data início</Label>
                 <Input type="date" value={genStartDate} onChange={e => setGenStartDate(e.target.value)}
-                  className="bg-navy-light/50 border-gold/10 text-white" />
+                  className="bg-[#1e2a25] border-[#36473d] text-white" />
               </div>
             </div>
             <Button onClick={generateInstallments} disabled={generating || !genUserId || !genAmount}
@@ -347,17 +348,17 @@ const AdminFinancial = () => {
             <div className="space-y-2">
               <Label className="text-gray-400 text-sm">Valor (R$)</Label>
               <Input type="number" step="0.01" value={editAmount} onChange={e => setEditAmount(e.target.value)}
-                className="bg-navy-light/50 border-gold/10 text-white" />
+                className="bg-[#1e2a25] border-[#36473d] text-white" />
             </div>
             <div className="space-y-2">
               <Label className="text-gray-400 text-sm">Data de vencimento</Label>
               <Input type="date" value={editDueDate} onChange={e => setEditDueDate(e.target.value)}
-                className="bg-navy-light/50 border-gold/10 text-white" />
+                className="bg-[#1e2a25] border-[#36473d] text-white" />
             </div>
             <div className="space-y-2">
               <Label className="text-gray-400 text-sm">Status</Label>
               <Select value={editStatus} onValueChange={handleStatusChange}>
-                <SelectTrigger className="bg-navy-light/50 border-gold/10 text-white">
+                <SelectTrigger className="bg-[#1e2a25] border-[#36473d] text-white">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-navy-dark border-gold/10">
@@ -371,13 +372,13 @@ const AdminFinancial = () => {
               <div className="space-y-2">
                 <Label className="text-gray-400 text-sm">Data de pagamento</Label>
                 <Input type="date" value={editPaidAt} onChange={e => setEditPaidAt(e.target.value)}
-                  className="bg-navy-light/50 border-gold/10 text-white" />
+                  className="bg-[#1e2a25] border-[#36473d] text-white" />
               </div>
             )}
             <div className="space-y-2">
               <Label className="text-gray-400 text-sm">Observações</Label>
               <Textarea value={editNotes} onChange={e => setEditNotes(e.target.value)}
-                className="bg-navy-light/50 border-gold/10 text-white" placeholder="Opcional" />
+                className="bg-[#1e2a25] border-[#36473d] text-white" placeholder="Opcional" />
             </div>
           </div>
           <DialogFooter className="gap-2 sm:justify-between">
