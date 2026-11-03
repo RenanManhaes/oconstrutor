@@ -88,7 +88,7 @@ export default function AdminDashboard() {
   if(error || !metrics)return <div className="studio-panel p-8"><CircleAlert className="text-[#d5a887]"/><h1 className="studio-title mt-3 text-xl">Não foi possível carregar os indicadores</h1><p className="studio-subtitle mt-2">Verifique a conexão e as permissões do banco antes de continuar.</p></div>;
 
   const cards=[
-    { label:"Mentorados cadastrados",value:String(metrics.totalUsers),note:"Pessoas no sistema",icon:UsersRound,href:"/admin/users" },
+    { label:"Perfis cadastrados",value:String(metrics.totalUsers),note:"Pessoas no sistema",icon:UsersRound,href:"/admin/users" },
     { label:"Encontros ativos",value:String(metrics.activeEncontros),note:metrics.totalEncontros+" encontros no total",icon:CalendarDays,href:"/admin/encontros" },
     { label:"Materiais na biblioteca",value:String(metrics.totalMaterials),note:"Conteúdos cadastrados",icon:BookOpen,href:"/admin/materials" },
     { label:"Presença registrada",value:metrics.attendanceRate+"%",note:metrics.presenceRecords+" registros de presença",icon:ClipboardCheck,href:"/admin/progress" },
