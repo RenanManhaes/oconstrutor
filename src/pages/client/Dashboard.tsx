@@ -55,8 +55,7 @@ export default function ClientDashboard() {
   const materialPct = percentage(stats.materialsCompleted, stats.materialsTotal);
   const presencePct = percentage(stats.attended, stats.totalEncontros);
   const actionPct = percentage(stats.checkDone, stats.checkTotal);
-  const nextStep = encontroSummaries.find(item => item.materialsCompleted < item.materialsTotal || item.checkDone < item.checkTotal)
-    || encontroSummaries[0];
+  const nextStep = encontroSummaries.find(item => item.materialsCompleted < item.materialsTotal || item.checkDone < item.checkTotal);
   const metrics = [
     { label: "Presença nos encontros", value: stats.attended + " / " + stats.totalEncontros, pct: presencePct, icon: CalendarDays, note:"dos encontros disponíveis" },
     { label: "Ações realizadas", value: stats.checkDone + " / " + stats.checkTotal, pct: actionPct, icon: CheckCircle2, note:"compromissos concluídos" },
@@ -79,7 +78,7 @@ export default function ClientDashboard() {
         <motion.section {...appear} transition={{ duration:.43,delay:.08 }} className="studio-focus-card">
           <div className="studio-eyebrow">O seu próximo movimento</div>
           <h2 className="mt-5 max-w-[560px] font-heading text-[clamp(27px,3.2vw,41px)] font-bold leading-[1.15] tracking-[-.06em]">
-            {nextStep ? nextStep.title : "Uma nova etapa começa com uma decisão."}
+            {nextStep ? nextStep.title : (encontroSummaries.length > 0 ? "Você está em dia com seus encontros." : "Uma nova etapa começa com uma decisão.")}
           </h2>
           <p className="mt-3 max-w-[440px] text-[13px] leading-[1.7] text-[#68776e]">
             {nextStep
