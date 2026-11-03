@@ -189,7 +189,7 @@ export default function Index() {
         <div className="oc-container grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,.8fr)] lg:gap-20">
           <Reveal className="min-h-[410px] bg-[#1e3029] p-8 text-[#f0e7d8] md:p-12">
             <div className="oc-eyebrow text-[#d6b493]">04 / O mentor</div>
-            <div className="mt-14 border-l border-[#be9e7f]/50 pl-7"><p className="oc-quote max-w-[580px] text-[clamp(34px,4vw,57px)]">“A construção de uma vida com direção exige consciência, coragem e continuidade.”</p></div>
+            <div className="mt-14 border-l border-[#be9e7f]/50 pl-7"><p className="oc-quote max-w-[580px] text-[clamp(34px,4vw,57px)]">Consciência, coragem e continuidade: uma construção que começa dentro.</p></div>
             <div className="mt-16 flex items-center gap-3"><span className="h-10 w-10 border border-[#b89c7d] grid place-items-center text-[#e8c6a8] font-serif text-2xl">V</span><div><p className="text-[13px] font-bold">Vagner Vieira</p><p className="mt-1 text-[11px] text-[#b9b8ac]">Mentor · O Construtor</p></div></div>
           </Reveal>
           <Reveal delay={.1} className="flex flex-col justify-center">
